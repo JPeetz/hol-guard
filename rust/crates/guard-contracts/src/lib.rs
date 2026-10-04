@@ -13,8 +13,16 @@ mod native_command_controls;
 pub use native_command_controls::*;
 mod approval_v4_contracts;
 pub use approval_v4_contracts::*;
+mod workspace_review_contracts;
+pub use workspace_review_contracts::*;
 mod archive_inspection;
 pub use archive_inspection::*;
+mod execution_environment;
+pub use execution_environment::*;
+mod context_digest;
+pub use context_digest::*;
+mod business_action;
+pub use business_action::*;
 
 pub const NATIVE_PROTOCOL_VERSION: u16 = 1;
 pub const GUARD_HOOK_ENVELOPE_V2_SCHEMA: &str = "guard-hook-envelope.v2";
@@ -38,6 +46,8 @@ pub struct GuardHookSourceMetadataV2 {
     pub guard_home: String,
     #[serde(default)]
     pub source_ref_external_allowed: bool,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub execution_environment: Option<GuardExecutionEnvironmentV1>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
