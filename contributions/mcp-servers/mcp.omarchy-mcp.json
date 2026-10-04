@@ -13,7 +13,7 @@
   },
   "icon": {
     "kind": "react-icon",
-    "name": "HiMiniServerStack",
+    "name": "HiMiniCube",
     "background": "#1E3A5F"
   },
   "homepage": "https://github.com/JPeetz/omarchy-mcp",
@@ -59,11 +59,11 @@
     },
     {
       "name": "hermes_execute",
-      "state": "inherit"
+      "state": "block"
     },
     {
       "name": "grok_execute",
-      "state": "inherit"
+      "state": "block"
     }
   ],
   "referenceUrls": [
