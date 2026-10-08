@@ -64,6 +64,10 @@
     {
       "name": "grok_execute",
       "state": "block"
+    },
+    {
+      "name": "other",
+      "state": "review"
     }
   ],
   "referenceUrls": [
@@ -71,8 +75,8 @@
     "https://github.com/NousResearch/hermes-agent/pull/111710"
   ],
   "saferAlternatives": [
-    "Use per-category Bearer tokens (OMARCHY_MCP_TOKEN_DISPATCH/FS/SHELL/READ) to scope blast radius independently of Guard policy.",
+    "Configure OMARCHY_MCP_TOKEN as the server's Bearer token; rely on Guard policy (the block states above) to scope what the agent may call.",
     "claude_execute and codex_execute are opt-in \u2014 only enable when remote dispatch is needed.",
-    "For read-only access, set only OMARCHY_MCP_TOKEN_READ and leave dispatch/shell tokens unconfigured."
+    "For read-only access there is no separate token scope — rely on Guard policy to keep write and dispatch tools blocked."
   ]
 }
